@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
-import { CatalogState } from "../BeerCatalog/State/state";
-import CatalogReducer from "../BeerCatalog/Reducer/red";
+import { IntroState } from "../IntroPage/State/state";
+import IntroReducer from "../IntroPage/Reducer/red";
 
 export interface StoreTree {
-    catalog: CatalogState;
+    intro: IntroState;
 }
 
 export const mainReducer = combineReducers({
-    catalog: CatalogReducer
+    intro: IntroReducer
 })

@@ -1,1 +1,0 @@
-export const BEERAPI = 'https://api.punkapi.com/v2/beers';
