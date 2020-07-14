@@ -11,9 +11,6 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ],
-    "headers": [
-      {"source": "/serviceWorker.ts", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
     ]
   }
 }
