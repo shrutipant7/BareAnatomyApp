@@ -79,7 +79,7 @@ export default class SlickSlider extends React.Component<Props, State> {
                                                 <div className="row form-check" key={k} >
                                                     <label className="form-check-label">
                                                         <input type="radio" className="form-check-input" name="radio-btn" onClick={() => { opt.option !== 'Other' && this.saveData(opt.option, s.quesType, i) }} />{opt.option}</label>
-                                                    {opt.option === 'Other' && <input onKeyDown={(e) => this.handleKeyBoard(e, s.quesType, i)} type="text" style={{ outline: 'none' }} name="radio-btn" onChange={(e) => this.setColor('Other-' + e.currentTarget.value)} />}
+                                                    {opt.option === 'Other' && <input placeholder="Fill and press enter" onKeyDown={(e) => this.handleKeyBoard(e, s.quesType, i)} type="text" style={{ outline: 'none' }} name="radio-btn" onChange={(e) => this.setColor('Other-' + e.currentTarget.value)} />}
                                                 </div>
                                             )}
                                         </div>
