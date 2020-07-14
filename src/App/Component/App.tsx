@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <Router history={history}>
-          <Route path={'/home'} component={Intro} exact={true} />
+          <Route path={'/'} component={Intro} exact={true} />
         </Router>
       </div>
     );
