@@ -11,6 +11,7 @@ interface Props {
 interface State {
     userInfo: any[];
     clicked: boolean;
+    color: string;
 }
 
 export default class SlickSlider extends React.Component<Props, State> {
@@ -20,7 +21,8 @@ export default class SlickSlider extends React.Component<Props, State> {
         this.slider = React.createRef();
         this.state = {
             userInfo: [],
-            clicked: false
+            clicked: false,
+            color: ''
         }
     }
     next = () => {
@@ -31,6 +33,23 @@ export default class SlickSlider extends React.Component<Props, State> {
     }
     goTo = (index: number) => {
         this.slider.slickGoTo(index);
+    }
+    handleKeyBoard = (e: React.KeyboardEvent, type: string, index: number) => {
+        if (e.keyCode === 13) {
+            let { color } = this.state;
+            if (isNullOrUndefined(color)) {
+                return false;
+            } else {
+                this.saveData(color, type, index);
+            }
+        }
+    }
+    setColor(color: string) {
+        if (color.length > 0) {
+            this.setState({ color: color });
+        } else {
+            this.setState({ color: '' });
+        }
     }
     render() {
         let a: any;
@@ -60,7 +79,7 @@ export default class SlickSlider extends React.Component<Props, State> {
                                                 <div className="row form-check" key={k} >
                                                     <label className="form-check-label">
                                                         <input type="radio" className="form-check-input" name="radio-btn" onClick={() => { opt.option !== 'Other' && this.saveData(opt.option, s.quesType, i) }} />{opt.option}</label>
-                                                    {opt.option === 'Other' && <input type="text" style={{ outline: 'none' }} name="radio-btn" onChange={(e) => this.saveData('Other-' + e.currentTarget.value, s.quesType, i)} />}
+                                                    {opt.option === 'Other' && <input onKeyDown={(e) => this.handleKeyBoard(e, s.quesType, i)} type="text" style={{ outline: 'none' }} name="radio-btn" onChange={(e) => this.setColor('Other-' + e.currentTarget.value)} />}
                                                 </div>
                                             )}
                                         </div>
