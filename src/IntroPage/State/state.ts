@@ -1,5 +1,5 @@
-// export const API = 'https://us-central1-bare-anatomy.cloudfunctions.net/app';
-export const API = 'http://localhost:5001/bare-anatomy/us-central1/app';
+export const API = 'https://us-central1-bare-anatomy.cloudfunctions.net/app';
+// export const API = 'http://localhost:5001/bare-anatomy/us-central1/app';
 
 export interface IntroState {
     userAnswers: any[];
