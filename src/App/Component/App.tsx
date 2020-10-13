@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createBrowserHistory } from 'history';
-import { Route, Router } from 'react-router-dom';
-import Intro from '../../IntroPage/Container/cont';
+import { Route, Router, Switch } from 'react-router-dom';
+import { ROUTES } from '../Routes/route';
 
 const history = createBrowserHistory();
 
@@ -10,7 +10,11 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <Router history={history}>
-          <Route path={'/home'} component={Intro} exact={true} />
+          <Switch >
+            {ROUTES.map((route, i) =>
+              <Route key={i} path={route.path} component={route.component} exact={true} />
+            )}
+          </Switch>
         </Router>
       </div>
     );

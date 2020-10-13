@@ -11,35 +11,42 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-.restart {
-  color: blue;
-  text-decoration: underline;
-  margin: 1%;
-  cursor: pointer;
-}
-.slick-arrow {
-  margin: 2%;
-}
-.slick-slider {
-  height: 300px;
-  background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
-  text-align: center;
-}
-#login-input-neutral {
-  height: 34px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 100%;
-  padding: 1%;
-}
-#login-input-danger{
-  height: 34px;
-  border: 1px solid #9F0000;
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 100%;
-  padding: 1%;
-  background-color: rgba(240, 186, 186, 0.308);
-}
+  .intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .card-container {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+  }
+  .form-check-input {
+    margin: 0.5rem 1.25rem 0rem 0rem;
+  }
+  footer {
+    float: right;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .form-control {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  #form-options{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 50%;
+    background: #eff5f5;
+    color: grey;
+  }
+  #questions-container {
+    width: 500px;
+  }
+  .quiz-selector-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
